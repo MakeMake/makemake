@@ -1,0 +1,22 @@
+{
+  "hosting": {
+    "public": "./packages/app/public",
+    "headers": [
+      {
+        "source": "**/*.@(js|png|webp|gif|jpg|jpeg|mp4)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ]
+  },
+  "functions": {
+    "source": "./packages/functions/dist"
+  },
+  "firestore": {
+    "rules": "./specs/firestore.rules"
+  }
+}

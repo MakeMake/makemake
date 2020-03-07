@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "name": "makemake",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "devDependencies": {
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "firebase-tools": "^7.14.0",
+    "jest": "^24.9.0",
+    "lerna": "^3.20.2",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "config:dev": "node ./scripts/setup-config.js dev",
+    "start": "lerna run start --stream",
+    "start:app": "lerna run start --scope @makemake/app --stream",
+    "start:functions": "lerna run start --scope @makemake/functions --stream",
+    "build": "NODE_ENV=production lerna run build --stream",
+    "build:website": "NODE_ENV=production lerna run build --scope @makemake/app --stream",
+    "build:functions": "NODE_ENV=production lerna run build --scope @makemake/functions --stream",
+    "deploy": "firebase deploy",
+    "lint": "eslint './packages/**/*.{js,ts,tsx}'",
+    "test": "jest",
+    "test:ci": "firebase emulators:exec --only functions,firestore 'yarn test -w 1'"
+  },
+  "fireConfig": {}
+}
