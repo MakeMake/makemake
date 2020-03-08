@@ -1,7 +1,13 @@
-import { firebase } from './config'
-
 export default {
   mode: 'spa',
+  dev: false,
+
+  srcDir: '/tmp/nuxt',
+  buildDir: '/tmp/nuxt/build',
+
+  generate: {
+    dir: '/tmp/nuxt/dist'
+  },
   /*
    ** Headers of the page
    */
@@ -29,37 +35,18 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['./plugins/auth.js'],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxt/typescript-build'
+    '@nuxtjs/tailwindcss'
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    [
-      '@nuxtjs/firebase',
-      {
-        config: firebase,
-        services: {
-          auth: true,
-          firestore: true,
-          functions: {
-            location: 'us-central1'
-          }
-        }
-      }
-    ]
-  ],
+  modules: [],
   /*
    ** Build configuration
    */

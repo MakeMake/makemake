@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "./packages/app/public",
+    "public": "./packages/app/dist",
     "headers": [
       {
         "source": "**/*.@(js|png|webp|gif|jpg|jpeg|mp4)",

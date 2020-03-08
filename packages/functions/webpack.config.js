@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires,no-undef */
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+const path = require('path')
+const nodeExternals = require('webpack-node-externals')
 
-const { srcPath, rootPath } = require('./paths');
+const { srcPath, rootPath } = require('./paths')
 
 module.exports = {
   target: 'node',
   entry: {
-    dist: path.join(srcPath, 'index.ts'),
-    scripts: path.join(srcPath, 'scripts')
+    dist: path.join(srcPath, 'index.ts')
   },
   output: {
     filename: '[name]/index.js',
@@ -41,4 +40,4 @@ module.exports = {
       whitelist: [/^@makemake/]
     })
   ]
-};
+}

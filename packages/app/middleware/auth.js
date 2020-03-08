@@ -7,6 +7,8 @@ export default function({ store, redirect, route }) {
   }
 
   if (loginRoutes.includes(route.path) && store.state.user) {
-    redirect('/dashboard')
+    redirect('/app')
   }
+
+  console.log('donothign')
 }
