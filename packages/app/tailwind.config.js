@@ -1,11 +1,131 @@
 /*
-** TailwindCSS Configuration File
-**
-** Docs: https://tailwindcss.com/docs/configuration
-** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
-*/
+ ** TailwindCSS Configuration File
+ **
+ ** Docs: https://tailwindcss.com/docs/configuration
+ ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
+ */
 module.exports = {
-  theme: {},
+  theme: {
+    fontFamily: {
+      mono: ['Fira Code', 'Menlo']
+    },
+    extend: {
+      colors: {
+        black: '#181F3F',
+        white: '#FFFFFF',
+        gray: {
+          '100': '#F7FAFC',
+          '200': '#EDF2F7',
+          '300': '#E2E8F0',
+          '400': '#CBD5E0',
+          '500': '#A0AEC0',
+          '600': '#718096',
+          '700': '#4A5568',
+          '800': '#2D3748',
+          '900': '#1A202C'
+        },
+        red: {
+          '100': '#FFEBF1',
+          '200': '#FFCCDB',
+          '300': '#FFAEC5',
+          '400': '#FE719A',
+          '500': '#FE346E',
+          '600': '#E52F63',
+          '700': '#981F42',
+          '800': '#721732',
+          '900': '#4C1021'
+        },
+        orange: {
+          '100': '#FFF5E6',
+          '200': '#FFE6BF',
+          '300': '#FFD699',
+          '400': '#FFB84D',
+          '500': '#FF9900',
+          '600': '#E68A00',
+          '700': '#995C00',
+          '800': '#734500',
+          '900': '#4D2E00'
+        },
+        yellow: {
+          '100': '#FFFBE6',
+          '200': '#FFF5BF',
+          '300': '#FFEF99',
+          '400': '#FFE24D',
+          '500': '#FFD600',
+          '600': '#E6C100',
+          '700': '#998000',
+          '800': '#736000',
+          '900': '#4D4000'
+        },
+        green: {
+          '100': '#E6FEF8',
+          '200': '#C1FBEE',
+          '300': '#9CF9E3',
+          '400': '#51F5CE',
+          '500': '#07F0B9',
+          '600': '#06D8A7',
+          '700': '#04906F',
+          '800': '#036C53',
+          '900': '#024838'
+        },
+        teal: {
+          '100': '#E7FDFC',
+          '200': '#C3FBF8',
+          '300': '#9FF8F4',
+          '400': '#58F3EB',
+          '500': '#10EEE3',
+          '600': '#0ED6CC',
+          '700': '#0A8F88',
+          '800': '#076B66',
+          '900': '#054744'
+        },
+        blue: {
+          '100': '#E6EBFF',
+          '200': '#BFCDFF',
+          '300': '#99AFFF',
+          '400': '#4D73FF',
+          '500': '#0037FF',
+          '600': '#0032E6',
+          '700': '#002199',
+          '800': '#001973',
+          '900': '#00114D'
+        },
+        indigo: {
+          '100': '#EFEDFF',
+          '200': '#D7D1FE',
+          '300': '#BFB5FD',
+          '400': '#907EFC',
+          '500': '#6047FB',
+          '600': '#5640E2',
+          '700': '#3A2B97',
+          '800': '#2B2071',
+          '900': '#1D154B'
+        },
+        purple: {
+          '100': '#F3EAFF',
+          '200': '#E2CBFF',
+          '300': '#D1ACFF',
+          '400': '#AE6EFF',
+          '500': '#8B30FF',
+          '600': '#7D2BE6',
+          '700': '#531D99',
+          '800': '#3F1673',
+          '900': '#2A0E4D'
+        },
+        pink: {
+          '100': '#FFF2FC',
+          '200': '#FEDFF8',
+          '300': '#FECBF3',
+          '400': '#FDA4EA',
+          '500': '#FC7DE1',
+          '600': '#E371CB',
+          '700': '#974B87',
+          '800': '#713865',
+          '900': '#4C2644'
+        }
+      }
+    }
+  },
   variants: {},
   plugins: []
 }

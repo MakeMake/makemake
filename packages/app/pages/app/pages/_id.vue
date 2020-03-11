@@ -9,40 +9,22 @@
         </div>
       </div>
 
-      <div class="text-xl pt-10">
+      <div class="pt-10">
         <label class="block">
           <span class="text-gray-700">Script</span>
-          <textarea
-            :value="page.script"
-            @input="page.script = $event.target.value"
-            class="form-textarea mt-1 block w-full border"
-            rows="3"
-            placeholder="Enter some long form content."
-          ></textarea>
+          <code-block v-model="page.script" mode="text/javascript" />
         </label>
       </div>
-      <div class="text-xl pt-10">
+      <div class="pt-10">
         <label class="block">
           <span class="text-gray-700">Template</span>
-          <textarea
-            :value="page.template"
-            @input="page.template = $event.target.value"
-            class="form-textarea mt-1 block w-full border"
-            rows="3"
-            placeholder="Enter some long form content."
-          ></textarea>
+          <code-block v-model="page.template" mode="text/html" />
         </label>
       </div>
-      <div class="text-xl pt-10">
+      <div class="pt-10">
         <label class="block">
           <span class="text-gray-700">Styles</span>
-          <textarea
-            :value="page.style"
-            @input="page.style = $event.target.value"
-            class="form-textarea mt-1 block w-full border"
-            rows="3"
-            placeholder="Enter some long form content."
-          ></textarea>
+          <code-block v-model="page.style" mode="text/css" />
         </label>
       </div>
     </div>
@@ -51,12 +33,15 @@
 
 <script lang="ts">
 import layout from '~/components/layout/Layout'
+import codeBlock from '~/components/modules/CodeBlock'
+
 export default {
   validate({ params }) {
     return /^\w+$/.test(params.id)
   },
   components: {
-    layout
+    layout,
+    codeBlock
   },
   middleware: 'auth',
   data: function({ params }) {

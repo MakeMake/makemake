@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-500 p-5 h-screen">
+  <div class="bg-gray-100 p-5 h-screen">
     <div class="text-xl">Sidebar</div>
 
     <tables class="pt-10" />

@@ -16,6 +16,7 @@
     "@nuxtjs/firebase": "^4.1.0",
     "firebase": "^7.10.0",
     "nuxt": "^2.0.0",
+    "vue-codemirror": "^4.0.6",
     "vuefire": "^2.2.1",
     "vuexfire": "^3.2.1"
   },
