@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">app</h1>
-      <h2 class="subtitle">My first-rate Nuxt.js project</h2>
+      <h2 class="subtitle">My coucou-rate Nuxt.js project</h2>
       <div class="links">
         <router-link to="/signin" class="button--green"> Sign in</router-link>
         <router-link to="/signup" class="button--green"> Sign up</router-link>

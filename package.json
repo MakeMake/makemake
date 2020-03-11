@@ -21,7 +21,7 @@
     "start:app": "lerna run start --scope @makemake/app --stream",
     "start:functions": "lerna run start --scope @makemake/functions --stream",
     "build": "NODE_ENV=production lerna run build --stream",
-    "build:website": "NODE_ENV=production lerna run build --scope @makemake/app --stream",
+    "build:app": "NODE_ENV=production lerna run build --scope @makemake/app --stream",
     "build:functions": "NODE_ENV=production lerna run build --scope @makemake/functions --stream",
     "deploy": "firebase deploy",
     "lint": "eslint './packages/**/*.{js,ts,tsx}'",
