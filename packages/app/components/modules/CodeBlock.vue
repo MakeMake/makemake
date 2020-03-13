@@ -1,16 +1,27 @@
+<!-- TODO: Add custom hint -->
+
 <template>
   <client-only placeholder="Codemirror Loading...">
     <codemirror
       ref="code"
       :value="this.value"
       :options="codeOptions"
+      @ready="onCodemirrorReady"
       @input="onChange"
+      :placeholder="this.placeholder"
     ></codemirror>
   </client-only>
 </template>
 
 <script>
 import { codemirror } from 'vue-codemirror'
+import 'codemirror/addon/display/placeholder'
+import 'codemirror/addon/edit/closetag'
+import 'codemirror/addon/hint/show-hint'
+import 'codemirror/addon/hint/show-hint.css'
+import 'codemirror/addon/hint/javascript-hint.js'
+import 'codemirror/addon/hint/html-hint.js'
+import 'codemirror/addon/hint/css-hint.js'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/htmlmixed/htmlmixed'
 import 'codemirror/mode/css/css'
@@ -20,13 +31,12 @@ export default {
   components: {
     codemirror
   },
-  // props: ['value', 'mode'],
   props: {
     value: String,
-    mode: String
+    mode: String,
+    placeholder: String
   },
   data: function({ params }) {
-    console.log(this.mode)
     return {
       codeOptions: {
         tabSize: 2,
@@ -34,13 +44,19 @@ export default {
         lineNumbers: true,
         theme: 'material-darker',
         line: true,
-        CodeMirrorLinenumbers: '120px'
+        autoCloseTags: true,
+        extraKeys: { 'Ctrl-E': 'autocomplete', 'Cmd-E': 'autocomplete' }
       }
     }
   },
   methods: {
     onChange: function(newCode) {
       this.$emit('input', newCode)
+    },
+    onCodemirrorReady: function(cm) {
+      cm.on('keypress', () => {
+        cm.showHint()
+      })
     }
   }
 }
@@ -68,6 +84,7 @@ div.CodeMirror-selected {
 .CodeMirror-cursor {
   @apply border-l-2 border-blue-500;
 }
+.CodeMirror pre.CodeMirror-placeholder,
 span.cm-comment {
   @apply text-gray-700;
 }
