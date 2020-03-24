@@ -4,8 +4,7 @@
       <sidebar />
     </div>
     <div class="flex-1 overflow-y-scroll h-screen">
-      <header-comp />
-      <div class="pt-10 p-20">
+      <div class="py-6 px-6 lg:px-16 xl:px-24">
         <slot />
       </div>
     </div>
@@ -14,12 +13,10 @@
 
 <script>
 import sidebar from './Sidebar'
-import headerComp from './Header'
 
 export default {
   components: {
-    sidebar,
-    headerComp
+    sidebar
   }
 }
 </script>

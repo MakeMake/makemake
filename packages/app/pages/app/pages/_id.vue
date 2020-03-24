@@ -2,21 +2,27 @@
   <layout>
     <div v-if="!page"></div>
     <div v-else>
-      <div class="flex justify-between align-items">
+      <div
+        class="flex items-center justify-between align-items sticky top-0 bg-white py-2 z-10 border-b-2 border-gray-200 mb-6"
+      >
         <div>
           <info value="page" color="blue-500" />
-          <titleH1 :value="page.name" />
-          <div
-            class="text-gray-500 font-medium outline-none"
-            contenteditable="true"
-            @blur="onDescriptionChange"
-            v-text="page.description"
-          ></div>
+          <titleH1 :value="page.name" class="-mt-4" />
         </div>
         <div>
-          <button class="button--green" @click="save">Save</button>
+          <btn :onClick="save">
+            <check-circle-icon size="18" class="mr-1 text-green-600">
+            </check-circle-icon>
+            Save
+          </btn>
         </div>
       </div>
+      <div
+        class="text-gray-500 font-medium outline-none"
+        contenteditable="true"
+        @blur="onDescriptionChange"
+        v-text="page.description"
+      ></div>
 
       <div class="pt-10">
         <label class="block">
@@ -53,10 +59,12 @@
 </template>
 
 <script lang="ts">
+import { CheckCircleIcon } from 'vue-feather-icons'
 import layout from '~/components/layout/Layout'
 import codeBlock from '~/components/modules/CodeBlock'
 import info from '~/components/typography/Info'
 import titleH1 from '~/components/typography/TitleH1'
+import btn from '~/components/ui/Button'
 
 export default {
   validate({ params }) {
@@ -66,7 +74,9 @@ export default {
     layout,
     codeBlock,
     info,
-    titleH1
+    titleH1,
+    btn,
+    CheckCircleIcon
   },
   middleware: 'auth',
   data: function({ params }) {
