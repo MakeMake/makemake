@@ -57,5 +57,7 @@ export default {
     extend(config, ctx) {}
   },
 
-  router: {}
+  router: {
+    base: '/makemake-dev-m3m3ssokddmyzi-mhrv/'
+  }
 }

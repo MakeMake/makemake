@@ -55,7 +55,9 @@ export default {
     build: async function() {
       console.log('build')
       this.$data.loading = true
-      await this.$fireFunc.httpsCallable('build-test')()
+      await this.$fireFunc.httpsCallable('build-deploy')({
+        projectID: this.$store.state.project.id
+      })
       this.$data.loading = false
     }
   }
