@@ -4,7 +4,7 @@ import { Member } from './Member'
 
 export interface ProjectInterface {
   id: string
-  title: string
+  name: string
   slug: string
   ownerID: string
 }
@@ -13,7 +13,7 @@ export const Project = {
   create(project: Partial<ProjectInterface> = {}): ProjectInterface {
     const defaultValues = {
       id: key(),
-      title: '',
+      name: '',
       slug: '',
       ownerID: ''
     }
