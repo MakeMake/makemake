@@ -49,10 +49,7 @@ export const getters = {
   },
   page(state) {
     return (id: string) => {
-      console.log(state.pages)
-
-      const res = state.pages.find((page) => page.name === id)
-      console.log(res)
+      const res = state.pages.find((page) => page.id === id)
 
       return res
     }

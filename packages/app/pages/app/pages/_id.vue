@@ -68,7 +68,8 @@ import btn from '~/components/ui/Button'
 
 export default {
   validate({ params }) {
-    return /^\w+$/.test(params.id)
+    // return /^\w+$/.test(params.id)
+    return true
   },
   components: {
     layout,
@@ -91,19 +92,7 @@ export default {
     save: function() {
       const page = this.$data.page
 
-      console.log(page)
-
-      return this.$fireStore
-        .collection('projects')
-        .doc('7mgD6u0ttGD6ZzIvUxtb')
-        .collection('pages')
-        .doc(page.id)
-        .update({
-          description: page.description,
-          template: page.template,
-          script: page.script,
-          style: page.style
-        })
+      this.$store.dispatch('updatePage', page)
     }
   },
 

@@ -4,6 +4,7 @@ import { Project } from './Project'
 
 export interface PageInterface {
   id: string
+  description: string
   name: string
   path: string
   template: string
@@ -16,6 +17,7 @@ export const Page = {
     const defaultValues = {
       id: key(),
       name: '',
+      description: '',
       path: '',
       template: '',
       style: '',
@@ -36,10 +38,28 @@ export const Page = {
     }
   },
 
+  queryByProject(db: firestore.Firestore) {
+    return (projectID: string) => {
+      return Project.queryByID(db)(projectID).collection('pages')
+    }
+  },
+
   /*
    * Create a page
    */
   createPage(db: firestore.Firestore) {
+    return async (
+      page: PageInterface,
+      projectID: string
+    ): Promise<PageInterface> => {
+      return Page.queryByID(db)(projectID, page.id).set(page)
+    }
+  },
+
+  /*
+   * Create a page
+   */
+  updatePage(db: firestore.Firestore) {
     return async (
       page: PageInterface,
       projectID: string

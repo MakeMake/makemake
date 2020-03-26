@@ -8,8 +8,8 @@
             email
           </label>
           <input
-            v-model="email"
             id="email"
+            v-model="email"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             placeholder="email"
@@ -23,8 +23,8 @@
             Password
           </label>
           <input
-            v-model="password"
             id="password"
+            v-model="password"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             placeholder="******************"
@@ -32,9 +32,9 @@
         </div>
         <div class="flex items-center justify-between">
           <button
-            v-on:click="signin(email, password)"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
+            @click="signin(email, password)"
           >
             Sign In
           </button>
@@ -69,6 +69,7 @@ export default {
   methods: {
     signin: function(email, password) {
       this.$store.dispatch('signin', { email, password })
+      this.$router.push('/app')
     }
   }
 }

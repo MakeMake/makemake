@@ -67,8 +67,9 @@ export default {
   },
 
   methods: {
-    signup: function(email, password) {
-      this.$store.dispatch('signup', { email, password })
+    signup: async function(email, password) {
+      await this.$store.dispatch('signup', { email, password })
+      this.$router.push('/app')
     }
   }
 }

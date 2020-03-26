@@ -38,8 +38,10 @@ export default {
   },
 
   methods: {
-    create: function(name) {
-      this.$store.dispatch('createProject', { name })
+    create: async function(name) {
+      await this.$store.dispatch('createProject', { name })
+      await this.$store.dispatch('listenMemberships')
+      this.$router.push('/app')
     }
   }
 }
