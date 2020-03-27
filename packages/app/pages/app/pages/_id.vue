@@ -7,7 +7,12 @@
       >
         <div>
           <info value="page" color="blue-500" />
-          <titleH1 :value="page.name" class="-mt-4" />
+          <div
+            contenteditable="true"
+            v-text="page.name"
+            @blur="onNameChange"
+            class="-mt-4"
+          />
         </div>
         <div>
           <btn :onClick="save">
@@ -63,7 +68,7 @@ import { CheckCircleIcon } from 'vue-feather-icons'
 import layout from '~/components/layout/Layout'
 import codeBlock from '~/components/modules/CodeBlock'
 import info from '~/components/typography/Info'
-import titleH1 from '~/components/typography/TitleH1'
+// import titleH1 from '~/components/typography/TitleH1'
 import btn from '~/components/ui/Button'
 
 export default {
@@ -75,7 +80,7 @@ export default {
     layout,
     codeBlock,
     info,
-    titleH1,
+    // titleH1,
     btn,
     CheckCircleIcon
   },
@@ -86,6 +91,10 @@ export default {
     }
   },
   methods: {
+    onNameChange: function(newName) {
+      console.log(newName)
+      this.$data.page.name = newName.target.textContent
+    },
     onDescriptionChange: function(newDescription) {
       this.$data.page.description = newDescription.target.textContent
     },

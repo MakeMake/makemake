@@ -4,7 +4,7 @@
       <div class="flex flex-row items-center">
         <span class="w-10 h-10 rounded bg-blue-200"></span>
         <div class="pl-4">
-          <h3 class="text-xl font-bold text-black">My app</h3>
+          <h3 class="text-xl font-bold text-black">{{ projectName }}</h3>
           <p class="text-xs text-gray-500">Mickaël Marquez</p>
         </div>
       </div>
@@ -14,11 +14,11 @@
     </div>
     <div>
       <a
-        href="http://yoplabidule.web.app"
+        :href="projectURL"
         target="_blank"
         class="text-sm text-blue-500 block mb-2"
       >
-        http://yoplabidule.web.app
+        {{ projectURL }}
       </a>
       <btn :onClick="build" class="w-full">
         <upload-cloud-icon size="18" class="mr-1 text-blue-500">
@@ -48,7 +48,9 @@ export default {
   },
   data: function() {
     return {
-      loading: false
+      loading: false,
+      projectName: this.$store.state.project.name,
+      projectURL: `https://${this.$store.state.project.slug}.hosting.churni.io`
     }
   },
   methods: {
@@ -56,7 +58,8 @@ export default {
       console.log('build')
       this.$data.loading = true
       await this.$fireFunc.httpsCallable('build-deploy')({
-        projectID: this.$store.state.project.id
+        projectID: this.$store.state.project.id,
+        slug: this.$store.state.project.slug
       })
       this.$data.loading = false
     }

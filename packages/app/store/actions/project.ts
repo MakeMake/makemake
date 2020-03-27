@@ -1,4 +1,5 @@
 import { Project } from '@makemake/core'
+import * as slugify from 'slugify'
 
 export const projectActions = {
   listenProject: function({ commit, state }) {
@@ -14,7 +15,11 @@ export const projectActions = {
     })
   },
   createProject: function({ commit, state }, { name }) {
-    const project = Project.create({ name, ownerID: state.user.uid })
+    const project = Project.create({
+      name,
+      slug: slugify(name),
+      ownerID: state.user.uid
+    })
 
     return Project.createProject(this.$fireStore)(project)
   }

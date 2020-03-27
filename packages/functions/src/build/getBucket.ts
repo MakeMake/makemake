@@ -1,13 +1,13 @@
 import { Bucket, Storage } from '@google-cloud/storage';
 import { firebaseAdmin } from '../config';
 
-async function getBucket(projectID: string): Promise<any> {
+async function getBucket(slug: string): Promise<any> {
   const gcs = new Storage({
     projectId: firebaseAdmin.project_id,
     credentials: firebaseAdmin
   });
 
-  const EXPORT_BUCKET = `${firebaseAdmin.project_id}${projectID}`.toLowerCase()
+  const EXPORT_BUCKET = `${slug}.hosting.churni.io`
 
   const bucket = gcs.bucket(EXPORT_BUCKET);
 
@@ -24,6 +24,10 @@ async function getBucket(projectID: string): Promise<any> {
 async function createBucket(bucket: Bucket): Promise<void> {
   await bucket.create();
   await bucket.makePublic();
+  await bucket.setMetadata({ website: {
+      mainPageSuffix: 'index.html',
+      notFoundPage: '404.html'
+    }})
 }
 
 export default getBucket;

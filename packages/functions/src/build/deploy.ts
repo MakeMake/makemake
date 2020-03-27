@@ -12,7 +12,7 @@ const stat = promisify(fs.stat);
 
 
 export const deploy = functions.https.onCall(async (data) => {
-  const { projectID } = data
+  const { projectID, slug } = data
   const firebaseAdmin = await createFirebaseAdminApp()
   const nuxtPath = path.resolve('/tmp', './nuxt')
   const pagesPath = path.resolve(nuxtPath, './pages')
@@ -63,7 +63,7 @@ export const deploy = functions.https.onCall(async (data) => {
   await builder.build()
   await generator.generate()
 
-  const bucket = await getBucket(projectID)
+  const bucket = await getBucket(slug)
 
   const distFiles = await getFiles(distPath)
 
