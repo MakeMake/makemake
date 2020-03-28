@@ -50,7 +50,7 @@ export default {
     return {
       loading: false,
       projectName: this.$store.state.project.name,
-      projectURL: `https://${this.$store.state.project.slug}.hosting.churni.io`
+      projectURL: `https://${this.$store.state.project.slug}.hosting.trymakemake.com`
     }
   },
   methods: {

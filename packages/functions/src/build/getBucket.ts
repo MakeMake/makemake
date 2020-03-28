@@ -7,7 +7,7 @@ async function getBucket(slug: string): Promise<any> {
     credentials: firebaseAdmin
   });
 
-  const EXPORT_BUCKET = `${slug}.hosting.churni.io`
+  const EXPORT_BUCKET = `${slug}.hosting.trymakemake.com`
 
   const bucket = gcs.bucket(EXPORT_BUCKET);
 

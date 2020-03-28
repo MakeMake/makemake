@@ -5477,16 +5477,6 @@ dimport@^1.0.0:
   dependencies:
     rewrite-imports "^2.0.3"
 
-dir-check@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dir-check/-/dir-check-1.0.0.tgz#827f4a43f0cea559f01fc89d2001c33142ba4c2a"
-  integrity sha1-gn9KQ/DOpVnwH8idIAHDMUK6TCo=
-
-dir-copy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dir-copy/-/dir-copy-1.0.0.tgz#fc1a85d12c745ecb4f21284e79c0de280f706130"
-  integrity sha1-/BqF0Sx0XstPIShOecDeKA9wYTA=
-
 dir-glob@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-2.2.2.tgz#fa09f0694153c8918b18ba0deafae94769fc50c4"
@@ -6411,16 +6401,6 @@ figures@^3.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
-file-check@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/file-check/-/file-check-1.0.0.tgz#964b6d10a6812bb1ab6895f6482060062c010e17"
-  integrity sha1-lkttEKaBK7GraJX2SCBgBiwBDhc=
-
-file-copy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/file-copy/-/file-copy-1.0.0.tgz#5c85834105cfa6eb520a431ac4fc36ff8c113840"
-  integrity sha1-XIWDQQXPputSCkMaxPw2/4wROEA=
-
 file-entry-cache@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/file-entry-cache/-/file-entry-cache-5.0.1.tgz#ca0f6efa6dd3d561333fb14515065c2fafdf439c"
@@ -6749,16 +6729,6 @@ from2@^2.1.0:
 fs-constants@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
-
-fs-copy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fs-copy/-/fs-copy-1.0.0.tgz#62029967aef0970fe13f88153c405085a42e23f4"
-  integrity sha1-YgKZZ67wlw/hP4gVPEBQhaQuI/Q=
-  dependencies:
-    dir-check "^1.0.0"
-    dir-copy "^1.0.0"
-    file-check "^1.0.0"
-    file-copy "^1.0.0"
 
 fs-extra@^0.23.1:
   version "0.23.1"
