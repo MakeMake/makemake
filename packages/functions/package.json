@@ -21,6 +21,7 @@
     "firebase-functions": "^3.3.0",
     "firebase-key": "^2.0.2",
     "firebase-tools": "^7.14.0",
+    "fs-extra": "^9.0.0",
     "googleapis": "^47.0.0",
     "isomorphic-fetch": "^2.2.1",
     "nuxt": "^2.11.0"
