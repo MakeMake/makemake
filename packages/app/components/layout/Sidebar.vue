@@ -16,7 +16,7 @@
       <a
         :href="projectURL"
         target="_blank"
-        class="text-sm text-blue-500 block mb-2"
+        class="text-sm text-blue-500 block mb-2 truncate"
       >
         {{ projectURL }}
       </a>

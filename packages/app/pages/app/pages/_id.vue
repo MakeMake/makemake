@@ -9,9 +9,10 @@
           <info value="page" color="blue-500" />
           <div
             contenteditable="true"
+            placeholder="Page name"
             v-text="page.name"
             @blur="onNameChange"
-            class="-mt-4"
+            class="-mt-4 text-4xl font-bold outline-none"
           />
         </div>
         <div>
@@ -23,8 +24,9 @@
         </div>
       </div>
       <div
-        class="text-gray-500 font-medium outline-none"
+        class="text-gray-500 outline-none"
         contenteditable="true"
+        placeholder="Add a description"
         @blur="onDescriptionChange"
         v-text="page.description"
       ></div>
@@ -111,4 +113,11 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  display: block; /* For Firefox */
+  @apply text-gray-400;
+}
+</style>
