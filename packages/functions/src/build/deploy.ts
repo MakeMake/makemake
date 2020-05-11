@@ -45,7 +45,10 @@ export const deploy = functions.https.onCall(async (data) => {
   </template>
 
   <script>
+    export default {
       ${page.script}
+    }
+
   </script>
 
   <style>
