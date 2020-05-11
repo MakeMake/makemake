@@ -1,3 +1,5 @@
+import { firebase } from '../config'
+
 export default {
   mode: 'spa',
   dev: false,
@@ -46,7 +48,22 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    [
+      '@nuxtjs/firebase',
+      {
+        config: firebase,
+        services: {
+          auth: true,
+          firestore: true,
+          functions: {
+            location: 'us-central1'
+            // emulatorPort: 8888
+          }
+        }
+      }
+    ]
+  ],
   /*
    ** Build configuration
    */

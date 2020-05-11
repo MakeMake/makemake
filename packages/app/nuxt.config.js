@@ -62,7 +62,7 @@ export default {
           firestore: true,
           functions: {
             location: 'us-central1',
-            // emulatorPort: 8888
+            emulatorPort: 8888
           }
         }
       }
